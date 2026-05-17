@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ["stripe-test-cards.ts"],
+  entry: ["index.ts"],
   format: ["esm", "cjs"],
   dts: true,
   clean: true,

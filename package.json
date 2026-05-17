@@ -5,18 +5,18 @@
   "keywords": ["stripe", "test", "cards", "testing", "payments"],
   "license": "MIT",
   "type": "module",
-  "main": "./dist/stripe-test-cards.cjs",
-  "module": "./dist/stripe-test-cards.js",
-  "types": "./dist/stripe-test-cards.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/stripe-test-cards.d.ts",
-        "default": "./dist/stripe-test-cards.js"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       },
       "require": {
-        "types": "./dist/stripe-test-cards.d.cts",
-        "default": "./dist/stripe-test-cards.cjs"
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
       }
     }
   },

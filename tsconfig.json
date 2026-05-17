@@ -9,5 +9,5 @@
     "sourceMap": true,
     "outDir": "./dist"
   },
-  "include": ["stripe-test-cards.ts"]
+  "include": ["index.ts"]
 }

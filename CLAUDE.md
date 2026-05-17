@@ -16,7 +16,7 @@ npm publish        # publish to npm (run build first)
 
 ## Structure
 
-The entire library lives in `stripe-test-cards.ts`. There are no dependencies, no build step, and no package.json — it is a standalone TypeScript module.
+The entire library lives in `index.ts`. Named `index.ts` rather than `stripe-test-cards.ts` so that direct source imports work without an explicit path (TypeScript cannot import a file whose name contains hyphens as a bare identifier). The package name already provides the `stripe-test-cards` context. There are no dependencies; `tsup` compiles it to `dist/` for publishing.
 
 The file is organized into sections:
 
