@@ -72,9 +72,9 @@ const FUTURE = "any future date" as const;
  * Standard test cards that succeed for each major card brand.
  * Use these for happy-path tests.
  */
-export const STANDARD_CARDS = {
+const standard = {
   /** Classic Stripe test Visa — the go-to for most tests. */
-  VISA: {
+  visa: {
     number: "4242424242424242",
     brand: "Visa",
     cvc: CVC3,
@@ -84,7 +84,7 @@ export const STANDARD_CARDS = {
     tokenId: "tok_visa",
   },
 
-  VISA_DEBIT: {
+  visaDebit: {
     number: "4000056655665556",
     brand: "Visa",
     cvc: CVC3,
@@ -94,7 +94,7 @@ export const STANDARD_CARDS = {
     tokenId: "tok_visa_debit",
   },
 
-  MASTERCARD: {
+  mastercard: {
     number: "5555555555554444",
     brand: "Mastercard",
     cvc: CVC3,
@@ -104,7 +104,7 @@ export const STANDARD_CARDS = {
     tokenId: "tok_mastercard",
   },
 
-  MASTERCARD_2SERIES: {
+  mastercard2Series: {
     number: "2223003122003222",
     brand: "Mastercard",
     cvc: CVC3,
@@ -112,7 +112,7 @@ export const STANDARD_CARDS = {
     description: "Mastercard 2-series — always succeeds",
   },
 
-  MASTERCARD_DEBIT: {
+  mastercardDebit: {
     number: "5200828282828210",
     brand: "Mastercard",
     cvc: CVC3,
@@ -121,7 +121,7 @@ export const STANDARD_CARDS = {
     pmId: "pm_card_mastercard_debit",
   },
 
-  MASTERCARD_PREPAID: {
+  mastercardPrepaid: {
     number: "5105105105105100",
     brand: "Mastercard",
     cvc: CVC3,
@@ -130,7 +130,7 @@ export const STANDARD_CARDS = {
     pmId: "pm_card_mastercard_prepaid",
   },
 
-  AMEX: {
+  amex: {
     number: "378282246310005",
     brand: "American Express",
     cvc: CVC4,
@@ -140,7 +140,7 @@ export const STANDARD_CARDS = {
     tokenId: "tok_amex",
   },
 
-  AMEX_ALT: {
+  amexAlt: {
     number: "371449635398431",
     brand: "American Express",
     cvc: CVC4,
@@ -148,7 +148,7 @@ export const STANDARD_CARDS = {
     description: "American Express (alternate number) — always succeeds",
   },
 
-  DISCOVER: {
+  discover: {
     number: "6011111111111117",
     brand: "Discover",
     cvc: CVC3,
@@ -158,7 +158,7 @@ export const STANDARD_CARDS = {
     tokenId: "tok_discover",
   },
 
-  DISCOVER_ALT: {
+  discoverAlt: {
     number: "6011000990139424",
     brand: "Discover",
     cvc: CVC3,
@@ -166,7 +166,7 @@ export const STANDARD_CARDS = {
     description: "Discover (alternate number) — always succeeds",
   },
 
-  DISCOVER_DEBIT: {
+  discoverDebit: {
     number: "6011981111111113",
     brand: "Discover",
     cvc: CVC3,
@@ -174,7 +174,7 @@ export const STANDARD_CARDS = {
     description: "Discover Debit — always succeeds",
   },
 
-  DINERS_CLUB: {
+  dinersClub: {
     number: "3056930009020004",
     brand: "Diners Club",
     cvc: CVC3,
@@ -184,7 +184,7 @@ export const STANDARD_CARDS = {
     tokenId: "tok_diners",
   },
 
-  DINERS_CLUB_14: {
+  dinersClub14: {
     number: "36227206271667",
     brand: "Diners Club",
     cvc: CVC3,
@@ -192,7 +192,7 @@ export const STANDARD_CARDS = {
     description: "Diners Club 14-digit — always succeeds",
   },
 
-  BCCARD_DINACARD: {
+  bccardDinacard: {
     number: "6555900000604105",
     brand: "BCcard / DinaCard",
     cvc: CVC3,
@@ -200,7 +200,7 @@ export const STANDARD_CARDS = {
     description: "BCcard/DinaCard — always succeeds",
   },
 
-  JCB: {
+  jcb: {
     number: "3566002020360505",
     brand: "JCB",
     cvc: CVC3,
@@ -210,7 +210,7 @@ export const STANDARD_CARDS = {
     tokenId: "tok_jcb",
   },
 
-  UNIONPAY: {
+  unionpay: {
     number: "6200000000000005",
     brand: "UnionPay",
     cvc: CVC3,
@@ -220,7 +220,7 @@ export const STANDARD_CARDS = {
     tokenId: "tok_unionpay",
   },
 
-  UNIONPAY_DEBIT: {
+  unionpayDebit: {
     number: "6200000000000047",
     brand: "UnionPay",
     cvc: CVC3,
@@ -228,7 +228,7 @@ export const STANDARD_CARDS = {
     description: "UnionPay Debit — always succeeds",
   },
 
-  UNIONPAY_19DIGIT: {
+  unionpay19Digit: {
     number: "6205500000000000004",
     brand: "UnionPay",
     cvc: CVC3,
@@ -245,8 +245,8 @@ export const STANDARD_CARDS = {
  * Co-branded test cards (e.g. Cartes Bancaires, EFTPOS Australia).
  * Useful for testing routing logic on co-branded networks.
  */
-export const CO_BRANDED_CARDS = {
-  VISA_CARTES_BANCAIRES: {
+const coBranded = {
+  visaCartesBancaires: {
     number: "4000002500001001",
     brand: "Visa / Cartes Bancaires",
     cvc: CVC3,
@@ -256,7 +256,7 @@ export const CO_BRANDED_CARDS = {
     tokenId: "tok_visa_cartesBancaires",
   },
 
-  MASTERCARD_CARTES_BANCAIRES: {
+  mastercardCartesBancaires: {
     number: "5555552500001001",
     brand: "Mastercard / Cartes Bancaires",
     cvc: CVC3,
@@ -266,7 +266,7 @@ export const CO_BRANDED_CARDS = {
     tokenId: "tok_mastercard_cartesBancaires",
   },
 
-  VISA_EFTPOS_AU: {
+  visaEftposAu: {
     number: "4000050360000001",
     brand: "Visa / EFTPOS Australia",
     cvc: CVC3,
@@ -276,7 +276,7 @@ export const CO_BRANDED_CARDS = {
     tokenId: "tok_visa_debit_eftposAuCoBranded",
   },
 
-  MASTERCARD_EFTPOS_AU: {
+  mastercardEftposAu: {
     number: "5555050360000080",
     brand: "Mastercard / EFTPOS Australia",
     cvc: CVC3,
@@ -297,9 +297,9 @@ export const CO_BRANDED_CARDS = {
  *
  * All cards are Visa; CVC = any 3 digits; expiry = any future date.
  */
-export const DECLINED_CARDS = {
+const declined = {
   /** Generic decline — no specific reason. errorCode: card_declined, declineCode: generic_decline */
-  GENERIC_DECLINE: {
+  genericDecline: {
     number: "4000000000000002",
     brand: "Visa",
     cvc: CVC3,
@@ -310,7 +310,7 @@ export const DECLINED_CARDS = {
   },
 
   /** Declined due to insufficient funds. errorCode: card_declined, declineCode: insufficient_funds */
-  INSUFFICIENT_FUNDS: {
+  insufficientFunds: {
     number: "4000000000009995",
     brand: "Visa",
     cvc: CVC3,
@@ -321,7 +321,7 @@ export const DECLINED_CARDS = {
   },
 
   /** Declined because card is reported lost. errorCode: card_declined, declineCode: lost_card */
-  LOST_CARD: {
+  lostCard: {
     number: "4000000000009987",
     brand: "Visa",
     cvc: CVC3,
@@ -332,7 +332,7 @@ export const DECLINED_CARDS = {
   },
 
   /** Declined because card is reported stolen. errorCode: card_declined, declineCode: stolen_card */
-  STOLEN_CARD: {
+  stolenCard: {
     number: "4000000000009979",
     brand: "Visa",
     cvc: CVC3,
@@ -343,7 +343,7 @@ export const DECLINED_CARDS = {
   },
 
   /** Declined because card is expired. errorCode: expired_card */
-  EXPIRED_CARD: {
+  expiredCard: {
     number: "4000000000000069",
     brand: "Visa",
     cvc: CVC3,
@@ -353,7 +353,7 @@ export const DECLINED_CARDS = {
   },
 
   /** Declined due to incorrect CVC. errorCode: incorrect_cvc */
-  INCORRECT_CVC: {
+  incorrectCvc: {
     number: "4000000000000127",
     brand: "Visa",
     cvc: CVC3,
@@ -363,7 +363,7 @@ export const DECLINED_CARDS = {
   },
 
   /** Declined due to a processing error. errorCode: processing_error */
-  PROCESSING_ERROR: {
+  processingError: {
     number: "4000000000000119",
     brand: "Visa",
     cvc: CVC3,
@@ -373,7 +373,7 @@ export const DECLINED_CARDS = {
   },
 
   /** Fails Luhn check — invalid card number. errorCode: incorrect_number */
-  INCORRECT_NUMBER: {
+  incorrectNumber: {
     number: "4242424242424241",
     brand: "Visa",
     cvc: CVC3,
@@ -383,7 +383,7 @@ export const DECLINED_CARDS = {
   },
 
   /** Declined because card velocity limit exceeded. errorCode: card_declined, declineCode: card_velocity_exceeded */
-  VELOCITY_EXCEEDED: {
+  velocityExceeded: {
     number: "4000000000006975",
     brand: "Visa",
     cvc: CVC3,
@@ -398,7 +398,7 @@ export const DECLINED_CARDS = {
    * Useful for testing save-card-then-charge flows.
    * errorCode: card_declined
    */
-  ATTACH_THEN_FAIL: {
+  attachThenFail: {
     number: "4000000000000341",
     brand: "Visa",
     cvc: CVC3,
@@ -416,9 +416,9 @@ export const DECLINED_CARDS = {
  * Test cards that simulate various Radar fraud-scoring scenarios.
  * Results depend on your Radar rule configuration.
  */
-export const RADAR_CARDS = {
+const radar = {
   /** Highest risk level — always blocked by Radar. */
-  ALWAYS_BLOCKED: {
+  alwaysBlocked: {
     number: "4100000000000019",
     brand: "Visa",
     cvc: CVC3,
@@ -427,7 +427,7 @@ export const RADAR_CARDS = {
   },
 
   /** Highest risk — may be blocked depending on Radar settings. */
-  HIGHEST_RISK: {
+  highestRisk: {
     number: "4000000000004954",
     brand: "Visa",
     cvc: CVC3,
@@ -436,7 +436,7 @@ export const RADAR_CARDS = {
   },
 
   /** Elevated risk — may be queued for review by Radar for Fraud Teams. */
-  ELEVATED_RISK: {
+  elevatedRisk: {
     number: "4000000000009235",
     brand: "Visa",
     cvc: CVC3,
@@ -445,7 +445,7 @@ export const RADAR_CARDS = {
   },
 
   /** High fraud dispute score. */
-  HIGH_DISPUTE_SCORE: {
+  highDisputeScore: {
     number: "4000008400000407",
     brand: "Visa",
     cvc: CVC3,
@@ -454,7 +454,7 @@ export const RADAR_CARDS = {
   },
 
   /** High early fraud warning score. */
-  HIGH_EFW_SCORE: {
+  highEfwScore: {
     number: "4000008400000159",
     brand: "Visa",
     cvc: CVC3,
@@ -463,7 +463,7 @@ export const RADAR_CARDS = {
   },
 
   /** Triggers Radar dynamic risk threshold control (when enabled). */
-  DYNAMIC_RISK_THRESHOLD: {
+  dynamicRiskThreshold: {
     number: "4000008401001017",
     brand: "Visa",
     cvc: CVC3,
@@ -472,7 +472,7 @@ export const RADAR_CARDS = {
   },
 
   /** Triggers Radar Adaptive 3DS control (when enabled). */
-  ADAPTIVE_3DS: {
+  adaptive3DS: {
     number: "4000008405600003",
     brand: "Visa",
     cvc: CVC3,
@@ -481,7 +481,7 @@ export const RADAR_CARDS = {
   },
 
   /** CVC check fails — succeeds unless blocked by a custom Radar rule. */
-  CVC_CHECK_FAILS: {
+  cvcCheckFails: {
     number: "4000000000000101",
     brand: "Visa",
     cvc: CVC3,
@@ -490,7 +490,7 @@ export const RADAR_CARDS = {
   },
 
   /** Zip/postal code check fails. */
-  ZIP_CHECK_FAILS: {
+  zipCheckFails: {
     number: "4000000000000036",
     brand: "Visa",
     cvc: CVC3,
@@ -499,7 +499,7 @@ export const RADAR_CARDS = {
   },
 
   /** CVC check fails with elevated risk. */
-  CVC_FAILS_ELEVATED: {
+  cvcFailsElevated: {
     number: "4000058400307872",
     brand: "Visa",
     cvc: CVC3,
@@ -508,7 +508,7 @@ export const RADAR_CARDS = {
   },
 
   /** Zip check fails with elevated risk. */
-  ZIP_FAILS_ELEVATED: {
+  zipFailsElevated: {
     number: "4000058400306072",
     brand: "Visa",
     cvc: CVC3,
@@ -517,7 +517,7 @@ export const RADAR_CARDS = {
   },
 
   /** Address line 1 check fails — payment succeeds unless blocked by a custom Radar rule. */
-  ADDRESS_LINE1_FAILS: {
+  addressLine1Fails: {
     number: "4000000000000028",
     brand: "Visa",
     cvc: CVC3,
@@ -526,7 +526,7 @@ export const RADAR_CARDS = {
   },
 
   /** Both zip and address line 1 checks fail. */
-  ZIP_AND_ADDRESS_FAIL: {
+  zipAndAddressFail: {
     number: "4000000000000010",
     brand: "Visa",
     cvc: CVC3,
@@ -535,7 +535,7 @@ export const RADAR_CARDS = {
   },
 
   /** Both zip and address line 1 checks return unavailable. */
-  ZIP_AND_ADDRESS_UNAVAILABLE: {
+  zipAndAddressUnavailable: {
     number: "4000000000000044",
     brand: "Visa",
     cvc: CVC3,
@@ -552,9 +552,9 @@ export const RADAR_CARDS = {
  * Test cards that succeed initially but then trigger disputes or chargebacks.
  * Use these to test your dispute-handling logic.
  */
-export const DISPUTE_CARDS = {
+const dispute = {
   /** Succeeds, then disputed as fraudulent (protected by 3DS auth). */
-  DISPUTED_FRAUD_PROTECTED: {
+  fraudProtected: {
     number: "4000000000000259",
     brand: "Visa",
     cvc: CVC3,
@@ -563,7 +563,7 @@ export const DISPUTE_CARDS = {
   },
 
   /** Succeeds, then disputed as product not received (NOT protected by 3DS). */
-  DISPUTED_PRODUCT_NOT_RECEIVED: {
+  productNotReceived: {
     number: "4000000000002685",
     brand: "Visa",
     cvc: CVC3,
@@ -572,7 +572,7 @@ export const DISPUTE_CARDS = {
   },
 
   /** Succeeds, then disputed as an inquiry. */
-  DISPUTED_INQUIRY: {
+  inquiry: {
     number: "4000000000001976",
     brand: "Visa",
     cvc: CVC3,
@@ -581,7 +581,7 @@ export const DISPUTE_CARDS = {
   },
 
   /** Succeeds, then triggers an early fraud warning. */
-  EARLY_FRAUD_WARNING: {
+  earlyFraudWarning: {
     number: "4000000000005423",
     brand: "Visa",
     cvc: CVC3,
@@ -590,7 +590,7 @@ export const DISPUTE_CARDS = {
   },
 
   /** Succeeds, then disputed multiple times. */
-  MULTIPLE_DISPUTES: {
+  multipleDisputes: {
     number: "4000000404000079",
     brand: "Visa",
     cvc: CVC3,
@@ -599,7 +599,7 @@ export const DISPUTE_CARDS = {
   },
 
   /** Succeeds; eligible for Visa Compelling Evidence 3.0 dispute. */
-  COMPELLING_EVIDENCE_ELIGIBLE: {
+  compellingEvidenceEligible: {
     number: "4000000404000038",
     brand: "Visa",
     cvc: CVC3,
@@ -608,7 +608,7 @@ export const DISPUTE_CARDS = {
   },
 
   /** Succeeds; treated as a Visa compliance dispute. */
-  COMPLIANCE_DISPUTE: {
+  complianceDispute: {
     number: "4000008400000779",
     brand: "Visa",
     cvc: CVC3,
@@ -624,9 +624,9 @@ export const DISPUTE_CARDS = {
 /**
  * Cards that interact with dispute-deflection services (Visa RDR, Ethoca, etc.).
  */
-export const DISPUTE_DEFLECTION_CARDS = {
+const disputeDeflection = {
   /** Visa RDR prevents dispute if account is registered; otherwise dispute is created. */
-  VISA_RDR: {
+  visaRdr: {
     number: "4000000404004816",
     brand: "Visa",
     cvc: CVC3,
@@ -635,7 +635,7 @@ export const DISPUTE_DEFLECTION_CARDS = {
   },
 
   /** Compelling Evidence 3.0 blocks dispute if registered; otherwise creates dispute. */
-  CE3_DEFLECTION: {
+  ce3Deflection: {
     number: "4000000404005649",
     brand: "Visa",
     cvc: CVC3,
@@ -644,7 +644,7 @@ export const DISPUTE_DEFLECTION_CARDS = {
   },
 
   /** Ethoca Alerts prevent dispute if registered for Dispute Resolution; otherwise creates dispute. */
-  ETHOCA_ALERT: {
+  ethocaAlert: {
     number: "5105000300000018",
     brand: "Mastercard",
     cvc: CVC3,
@@ -661,14 +661,14 @@ export const DISPUTE_DEFLECTION_CARDS = {
  * Test cards for 3D Secure (3DS / 3DS2) and Strong Customer Authentication (SCA) scenarios.
  * Essential for testing European payment flows.
  */
-export const THREE_DS_CARDS = {
+const threeDS = {
   // -- Standard 3DS behaviour --
 
   /**
    * 3DS REQUIRED — issued in Ireland (IE).
    * Radar requests 3DS by default. Authentication succeeds.
    */
-  REQUIRED_IE: {
+  requiredIe: {
     number: "4000000000003220",
     brand: "Visa",
     cvc: CVC3,
@@ -682,7 +682,7 @@ export const THREE_DS_CARDS = {
    * 3DS REQUIRED — issued in USA (US).
    * Radar requests 3DS by default. Authentication succeeds.
    */
-  REQUIRED_US: {
+  requiredUs: {
     number: "4000008400000027",
     brand: "Visa",
     cvc: CVC3,
@@ -695,7 +695,7 @@ export const THREE_DS_CARDS = {
   /**
    * 3DS REQUIRED — payment fails with card_declined after authentication.
    */
-  REQUIRED_THEN_DECLINED: {
+  requiredThenDeclined: {
     number: "4000008400001629",
     brand: "Visa",
     cvc: CVC3,
@@ -708,7 +708,7 @@ export const THREE_DS_CARDS = {
   /**
    * 3DS REQUIRED — 3DS lookup fails with processing error.
    */
-  REQUIRED_LOOKUP_ERROR: {
+  requiredLookupError: {
     number: "4000008400001280",
     brand: "Visa",
     cvc: CVC3,
@@ -722,7 +722,7 @@ export const THREE_DS_CARDS = {
    * 3DS SUPPORTED but NOT required.
    * Radar does NOT request 3DS by default. Payment succeeds without 3DS.
    */
-  SUPPORTED_NOT_REQUIRED: {
+  supportedNotRequired: {
     number: "4000000000003055",
     brand: "Visa",
     cvc: CVC3,
@@ -736,7 +736,7 @@ export const THREE_DS_CARDS = {
    * 3DS SUPPORTED — attempting 3DS causes a processing error.
    * Radar does NOT request 3DS by default.
    */
-  SUPPORTED_3DS_ERROR: {
+  supported3dsError: {
     number: "4000000000003097",
     brand: "Visa",
     cvc: CVC3,
@@ -750,7 +750,7 @@ export const THREE_DS_CARDS = {
    * Standard Visa — 3DS SUPPORTED but card is not enrolled.
    * Customer will not be prompted for 3DS.
    */
-  NOT_ENROLLED: {
+  notEnrolled: {
     number: "4242424242424242",
     brand: "Visa",
     cvc: CVC3,
@@ -765,7 +765,7 @@ export const THREE_DS_CARDS = {
    * American Express — 3DS NOT SUPPORTED.
    * Proceeds without authentication.
    */
-  AMEX_NOT_SUPPORTED: {
+  amexNotSupported: {
     number: "378282246310005",
     brand: "American Express",
     cvc: CVC4,
@@ -782,7 +782,7 @@ export const THREE_DS_CARDS = {
    * Requires authentication for off-session payments UNLESS the card has been
    * set up for future use. On-session always requires authentication.
    */
-  REQUIRES_AUTH_OFF_SESSION: {
+  requiresAuthOffSession: {
     number: "4000002500003155",
     brand: "Visa",
     cvc: CVC3,
@@ -795,7 +795,7 @@ export const THREE_DS_CARDS = {
   /**
    * Always requires authentication for ALL transactions regardless of how it was set up.
    */
-  ALWAYS_REQUIRES_AUTH: {
+  alwaysRequiresAuth: {
     number: "4000002760003184",
     brand: "Visa",
     cvc: CVC3,
@@ -809,7 +809,7 @@ export const THREE_DS_CARDS = {
    * Already set up for off-session use.
    * Off-session payments succeed; on-session still requires authentication.
    */
-  SETUP_FOR_OFF_SESSION: {
+  setupForOffSession: {
     number: "4000003800000446",
     brand: "Visa",
     cvc: CVC3,
@@ -823,7 +823,7 @@ export const THREE_DS_CARDS = {
    * Requires authentication for one-time payments.
    * ALL charges fail with insufficient_funds even after successful authentication.
    */
-  AUTH_THEN_INSUFFICIENT_FUNDS: {
+  authThenInsufficientFunds: {
     number: "4000008260003178",
     brand: "Visa",
     cvc: CVC3,
@@ -836,7 +836,7 @@ export const THREE_DS_CARDS = {
   // -- Frictionless flow --
 
   /** 3DS required on all transactions; frictionless flow; authentication succeeds. */
-  FRICTIONLESS: {
+  frictionless: {
     number: "4000000032200000",
     brand: "Visa",
     cvc: CVC3,
@@ -849,7 +849,7 @@ export const THREE_DS_CARDS = {
   // -- 3DS2 challenge flows --
 
   /** 3DS2 required; Out-of-Band (OOB) challenge flow. */
-  CHALLENGE_OOB: {
+  challengeOob: {
     number: "4000582600000094",
     brand: "Visa",
     cvc: CVC3,
@@ -860,7 +860,7 @@ export const THREE_DS_CARDS = {
   },
 
   /** 3DS2 required; One-Time Passcode challenge flow. */
-  CHALLENGE_OTP: {
+  challengeOtp: {
     number: "4000582600000045",
     brand: "Visa",
     cvc: CVC3,
@@ -871,7 +871,7 @@ export const THREE_DS_CARDS = {
   },
 
   /** 3DS2 required; Single-Select challenge flow. */
-  CHALLENGE_SINGLE_SELECT: {
+  challengeSingleSelect: {
     number: "4000582600000102",
     brand: "Visa",
     cvc: CVC3,
@@ -882,7 +882,7 @@ export const THREE_DS_CARDS = {
   },
 
   /** 3DS2 required; Multi-Select challenge flow. */
-  CHALLENGE_MULTI_SELECT: {
+  challengeMultiSelect: {
     number: "4000582600000110",
     brand: "Visa",
     cvc: CVC3,
@@ -895,7 +895,7 @@ export const THREE_DS_CARDS = {
   // -- Captcha challenge --
 
   /** Payment succeeds if the user correctly answers a captcha challenge. */
-  CAPTCHA_1: {
+  captcha1: {
     number: "4000000000001208",
     brand: "Visa",
     cvc: CVC3,
@@ -906,7 +906,7 @@ export const THREE_DS_CARDS = {
   },
 
   /** Payment succeeds if the user correctly answers a captcha challenge (alternate). */
-  CAPTCHA_2: {
+  captcha2: {
     number: "4000000000003725",
     brand: "Visa",
     cvc: CVC3,
@@ -924,9 +924,9 @@ export const THREE_DS_CARDS = {
 /**
  * Test cards for in-person / terminal payment scenarios with PIN/SCA requirements.
  */
-export const TERMINAL_CARDS = {
+const terminal = {
   /** Simulates offline PIN verification. cardholder_verification_method = offline_pin */
-  OFFLINE_PIN: {
+  offlinePin: {
     number: "4001007020000002",
     brand: "Visa",
     cvc: CVC3,
@@ -935,7 +935,7 @@ export const TERMINAL_CARDS = {
   },
 
   /** SCA retry: contactless fails, insert card + offline PIN required. */
-  SCA_RETRY_OFFLINE_PIN: {
+  scaRetryOfflinePin: {
     number: "4000008260000075",
     brand: "Visa",
     cvc: CVC3,
@@ -944,7 +944,7 @@ export const TERMINAL_CARDS = {
   },
 
   /** Simulates online PIN verification. cardholder_verification_method = online_pin */
-  ONLINE_PIN: {
+  onlinePin: {
     number: "4001000360000005",
     brand: "Visa",
     cvc: CVC3,
@@ -953,7 +953,7 @@ export const TERMINAL_CARDS = {
   },
 
   /** SCA retry: contactless fails, insert card + online PIN required. */
-  SCA_RETRY_ONLINE_PIN: {
+  scaRetryOnlinePin: {
     number: "4000002760000008",
     brand: "Visa",
     cvc: CVC3,
@@ -969,9 +969,9 @@ export const TERMINAL_CARDS = {
 /**
  * Test cards for async refund state transitions.
  */
-export const REFUND_CARDS = {
+const refund = {
   /** Payment succeeds; refund starts as pending, then transitions to succeeded. */
-  REFUND_PENDING_TO_SUCCEEDED: {
+  pendingToSucceeded: {
     number: "4000000000007726",
     brand: "Visa",
     cvc: CVC3,
@@ -980,7 +980,7 @@ export const REFUND_CARDS = {
   },
 
   /** Payment succeeds; refund starts as succeeded, then transitions to failed. */
-  REFUND_SUCCEEDED_TO_FAILED: {
+  succeededToFailed: {
     number: "4000000000005126",
     brand: "Visa",
     cvc: CVC3,
@@ -997,9 +997,9 @@ export const REFUND_CARDS = {
  * Cards where funds bypass the pending balance and go directly to available balance.
  * Useful for testing payout and balance scenarios.
  */
-export const BALANCE_CARDS = {
+const balance = {
   /** US charge succeeds; funds skip pending balance, go directly to available balance. */
-  BYPASS_PENDING_US: {
+  bypassPendingUs: {
     number: "4000000000000077",
     brand: "Visa",
     cvc: CVC3,
@@ -1008,7 +1008,7 @@ export const BALANCE_CARDS = {
   },
 
   /** International charge succeeds; funds skip pending balance. */
-  BYPASS_PENDING_INTERNATIONAL: {
+  bypassPendingInternational: {
     number: "4000003720000278",
     brand: "Visa",
     cvc: CVC3,
@@ -1024,10 +1024,11 @@ export const BALANCE_CARDS = {
 /**
  * Country-specific test cards for geo-billing tests.
  * Use these when your integration needs to simulate cards issued in a particular country.
+ * Keys are ISO 3166-1 alpha-2 country codes.
  *
  * @see https://docs.stripe.com/testing#international-cards
  */
-export const COUNTRY_CARDS = {
+const country = {
   // Americas
   US: { number: "4242424242424242", brand: "Visa", cvc: CVC3, expiry: FUTURE, country: "US", description: "United States", pmId: "pm_card_us" },
   BR: { number: "4000000760000002", brand: "Visa", cvc: CVC3, expiry: FUTURE, country: "BR", description: "Brazil", pmId: "pm_card_br" },
@@ -1065,31 +1066,52 @@ export const COUNTRY_CARDS = {
 } as const satisfies Record<string, StripeCountryCard>;
 
 // ---------------------------------------------------------------------------
-// Convenience re-exports
+// Default export
 // ---------------------------------------------------------------------------
 
 /**
- * The single most commonly used test card number.
- * A standard Visa that always succeeds in Stripe's test mode.
- */
-export const DEFAULT_CARD_NUMBER = STANDARD_CARDS.VISA.number;
-
-/**
- * Flat lookup of all card numbers by a human-readable key.
- * Useful for parameterised tests.
+ * All Stripe test cards, grouped by use case.
  *
  * @example
- * it.each(Object.entries(ALL_CARDS))("handles %s", (_name, card) => { ... })
+ * import cards from 'stripe-test-cards';
+ *
+ * // Happy-path test
+ * cardNumber: cards.standard.visa.number
+ *
+ * // Decline test
+ * cardNumber: cards.declined.insufficientFunds.number
+ *
+ * // 3DS test
+ * cardNumber: cards.threeDS.requiredIe.number
+ *
+ * // Parameterised test over every card
+ * it.each(Object.entries(cards.all))('handles %s', (_name, card) => { ... })
  */
-export const ALL_CARDS = {
-  ...STANDARD_CARDS,
-  ...CO_BRANDED_CARDS,
-  ...DECLINED_CARDS,
-  ...RADAR_CARDS,
-  ...DISPUTE_CARDS,
-  ...DISPUTE_DEFLECTION_CARDS,
-  ...THREE_DS_CARDS,
-  ...TERMINAL_CARDS,
-  ...REFUND_CARDS,
-  ...BALANCE_CARDS,
+const cards = {
+  standard,
+  coBranded,
+  declined,
+  radar,
+  dispute,
+  disputeDeflection,
+  threeDS,
+  terminal,
+  refund,
+  balance,
+  country,
+  /** Flat lookup of every card by key — useful for parameterised tests. */
+  all: {
+    ...standard,
+    ...coBranded,
+    ...declined,
+    ...radar,
+    ...dispute,
+    ...disputeDeflection,
+    ...threeDS,
+    ...terminal,
+    ...refund,
+    ...balance,
+  },
 } as const;
+
+export default cards;

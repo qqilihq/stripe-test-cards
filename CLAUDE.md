@@ -21,19 +21,26 @@ The entire library lives in `index.ts`. Named `index.ts` rather than `stripe-tes
 The file is organized into sections:
 
 1. **Types** — Four exported interfaces: `StripeTestCard` (base), `StripeDeclineCard`, `Stripe3DSCard`, `StripeCountryCard`
-2. **Card collections** — Named `const` objects, each typed with `as const satisfies`:
-   - `STANDARD_CARDS` — Always-succeeding cards across major networks (Visa, Mastercard, Amex, Discover, JCB, UnionPay, etc.)
-   - `CO_BRANDED_CARDS` — Cartes Bancaires and EFTPOS Australia co-branded variants
-   - `DECLINED_CARDS` — Cards that trigger specific decline codes
-   - `RADAR_CARDS` — Cards that simulate Stripe Radar fraud-scoring outcomes
-   - `DISPUTE_CARDS` — Cards that trigger dispute/chargeback flows
-   - `DISPUTE_DEFLECTION_CARDS` — Visa RDR, CE3, Ethoca Alerts
-   - `THREE_DS_CARDS` — 3D Secure / SCA scenarios (required, supported, frictionless, challenge flows)
-   - `TERMINAL_CARDS` — In-person / PIN scenarios
-   - `REFUND_CARDS` — Async refund state transitions
-   - `BALANCE_CARDS` — Cards that bypass pending balance
-   - `COUNTRY_CARDS` — Country-specific billing cards
-3. **Convenience exports** — `DEFAULT_CARD_NUMBER` (Visa 4242…) and `ALL_CARDS` (flat lookup of every card keyed by name)
+2. **Card collections** — Internal `const` objects (not individually exported), each typed with `as const satisfies`, composed into a single default export named `cards`:
+   - `cards.standard` — Always-succeeding cards across major networks (Visa, Mastercard, Amex, Discover, JCB, UnionPay, etc.)
+   - `cards.coBranded` — Cartes Bancaires and EFTPOS Australia co-branded variants
+   - `cards.declined` — Cards that trigger specific decline codes
+   - `cards.radar` — Cards that simulate Stripe Radar fraud-scoring outcomes
+   - `cards.dispute` — Cards that trigger dispute/chargeback flows
+   - `cards.disputeDeflection` — Visa RDR, CE3, Ethoca Alerts
+   - `cards.threeDS` — 3D Secure / SCA scenarios (required, supported, frictionless, challenge flows)
+   - `cards.terminal` — In-person / PIN scenarios
+   - `cards.refund` — Async refund state transitions
+   - `cards.balance` — Cards that bypass pending balance
+   - `cards.country` — Country-specific billing cards (keys are uppercase ISO 3166-1 alpha-2 codes)
+   - `cards.all` — Flat spread of all cards for parameterised tests
+3. **Usage** — Single default import; all inner keys are camelCase:
+   ```ts
+   import cards from 'stripe-test-cards';
+   cards.standard.visa.number
+   cards.declined.insufficientFunds.number
+   cards.threeDS.requiredIe.number
+   ```
 
 ## Conventions
 
