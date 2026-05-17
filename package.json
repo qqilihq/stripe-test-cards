@@ -23,9 +23,19 @@
   "files": [
     "dist"
   ],
+  "author": "Philipp Katz <philipp@philippkatz.de>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qqilihq/stripe-test-cards.git"
+  },
+  "homepage": "https://github.com/qqilihq/stripe-test-cards",
+  "bugs": {
+    "url": "https://github.com/qqilihq/stripe-test-cards/issues"
+  },
   "scripts": {
     "build": "tsup",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "tsup": "^8.0.0",
