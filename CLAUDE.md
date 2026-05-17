@@ -6,6 +6,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A single-file TypeScript library providing a typed, comprehensive reference of all Stripe test card numbers. Intended to be imported directly into test suites that use Stripe's sandbox/test API keys.
 
+## Commands
+
+```bash
+npm run build      # compile to dist/ (ESM + CJS + .d.ts) via tsup
+npm run typecheck  # tsc type-check without emitting
+npm publish        # publish to npm (run build first)
+```
+
 ## Structure
 
 The entire library lives in `stripe-test-cards.ts`. There are no dependencies, no build step, and no package.json — it is a standalone TypeScript module.

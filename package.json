@@ -1,0 +1,34 @@
+{
+  "name": "stripe-test-cards",
+  "version": "0.1.0",
+  "description": "A comprehensive, typed reference of all Stripe test card numbers for use in test suites.",
+  "keywords": ["stripe", "test", "cards", "testing", "payments"],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/stripe-test-cards.cjs",
+  "module": "./dist/stripe-test-cards.js",
+  "types": "./dist/stripe-test-cards.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/stripe-test-cards.d.ts",
+        "default": "./dist/stripe-test-cards.js"
+      },
+      "require": {
+        "types": "./dist/stripe-test-cards.d.cts",
+        "default": "./dist/stripe-test-cards.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
